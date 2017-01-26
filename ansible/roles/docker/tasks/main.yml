@@ -54,7 +54,7 @@
 
 - name: DockerUI is running
   docker:
-    image: uifd/ui-for-docker
+    image: portainer/portainer
     name: dockerui
     ports: 9000:9000
     privileged: yes
@@ -71,4 +71,9 @@
 - name: java:8u111-jdk image is present
   docker:
     image: java:8u111-jdk
+  tags: [docker]
+
+- name: postgres image is present
+  docker:
+    image: postgres
   tags: [docker]

@@ -1,0 +1,24 @@
+group 'pl.dziurdziak.docker_kata'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.3'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile'com.google.guava:guava:21.0'
+
+        compileOnly "org.projectlombok:lombok:1.16.12"
+    }
+}
+
+

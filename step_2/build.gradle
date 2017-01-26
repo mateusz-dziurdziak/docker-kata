@@ -1,0 +1,20 @@
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'pl.dziurdziak.docker_kata.step_2.Quoter',
+        )
+    }
+}
+
+task fatJar(type: Jar) {
+    manifest.from jar.manifest
+    classifier = 'all'
+    from {
+        configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+artifacts {
+    archives fatJar
+}

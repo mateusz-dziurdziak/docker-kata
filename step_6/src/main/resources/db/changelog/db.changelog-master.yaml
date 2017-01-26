@@ -1,0 +1,33 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: mdziurdziak
+    changes:
+      - createTable:
+          tableName: quote
+          columns:
+            - column:
+                name: id
+                type: int
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: quote
+                type: varchar(1024)
+                constraints:
+                  nullable: false
+            - column:
+                name: author
+                type: varchar(512)
+                constraints:
+                  nullable: false
+- changeSet:
+    id: 2
+    author: mdziurdziak
+    changes:
+    - loadData:
+        tableName: quote
+        encoding: UTF-8
+        file: quotes.csv
+        separator: "|"

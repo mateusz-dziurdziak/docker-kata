@@ -14,7 +14,7 @@ Vagrant.configure(2) do |config|
     d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
     d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant/ansible/dev1.yml -c local"
     d.vm.provider "virtualbox" do |v|
-      v.memory = 2048
+      v.memory = 1024
     end
   end
   config.vm.define "dev2" do |d|
@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
     d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
     d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant/ansible/dev2.yml -c local"
     d.vm.provider "virtualbox" do |v|
-      v.memory = 1024
+      v.memory = 600
     end
   end
   config.vm.define "dev3" do |d|
@@ -34,7 +34,7 @@ Vagrant.configure(2) do |config|
     d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
     d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant/ansible/dev3.yml -c local"
     d.vm.provider "virtualbox" do |v|
-      v.memory = 1024
+      v.memory = 600
     end
   end
   if Vagrant.has_plugin?("vagrant-cachier")
