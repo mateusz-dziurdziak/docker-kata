@@ -68,9 +68,9 @@
     image: ubuntu:14.04
   tags: [docker]
 
-- name: java:8u111-jdk image is present
+- name: openjdk:8u121-jdk image is present
   docker:
-    image: java:8u111-jdk
+    image: openjdk:8u121-jdk
   tags: [docker]
 
 - name: postgres image is present
