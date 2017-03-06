@@ -1,0 +1,6 @@
+FROM ubuntu:14.04
+
+LABEL "pl.dziurdziak.testLabel1"="Label with spaces"
+LABEL pl.dziurdziak.testLabel2=testLabel2Value pl.dziurdziak.testLabel3=testLabel3Value
+LABEL pl.dziurdziak.multilineLabel="first line \
+and here goes the second one"
