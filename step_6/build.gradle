@@ -1,9 +1,11 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE")
+        classpath 'com.bmuschko:gradle-docker-plugin:3.0.5'
     }
 }
 
@@ -14,4 +16,23 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.liquibase:liquibase-core")
     compile("org.postgresql:postgresql")
+}
+
+apply plugin: 'com.bmuschko.docker-remote-api'
+
+import com.bmuschko.gradle.docker.tasks.image.Dockerfile
+import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
+
+task createDockerfile(type: Dockerfile) {
+    destFile = project.file('build/Dockerfile')
+    from 'java:8u111-jdk'
+    copyFile('libs/step_6.jar', 'app.jar')
+    exposePort 8080
+    entryPoint("java", "-jar", "app.jar")
+}
+
+task buildImage(type: DockerBuildImage) {
+    dependsOn createDockerfile
+    inputDir = createDockerfile.destFile.parentFile
+    tag = 'mdziurdziak/step_6'
 }
