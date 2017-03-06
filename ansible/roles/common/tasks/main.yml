@@ -4,6 +4,12 @@
     force: yes
   tags: [common]
 
+- name: netcat is present
+  apt:
+   name: netcat
+   force: yes
+  tags: [common]
+
 - name: Host is present
   lineinfile:
     dest: /etc/hosts
