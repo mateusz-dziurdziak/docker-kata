@@ -1,0 +1,4 @@
+FROM ubuntu:16.04
+ADD test* .
+ADD test?ile.t?t testFile2.txt
+ADD http://www.e-point.pl/firma ./epoint-website/
