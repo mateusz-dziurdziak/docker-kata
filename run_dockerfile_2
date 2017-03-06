@@ -1,0 +1,5 @@
+FROM ubuntu:16.04
+RUN echo "Test" > testFile.txt
+RUN apt-get update
+RUN apt-get install -y \
+    curl
