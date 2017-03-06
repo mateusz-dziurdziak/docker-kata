@@ -1,0 +1,4 @@
+FROM ubuntu:16.04
+COPY test* .
+COPY test?ile.t?t testFile2.txt
+COPY [p-u]est?ile.txt testFile3.txt
