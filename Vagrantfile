@@ -27,16 +27,6 @@ Vagrant.configure(2) do |config|
       v.memory = 600
     end
   end
-  config.vm.define "dev3" do |d|
-    d.vm.box = "ubuntu/trusty64"
-    d.vm.hostname = "dev3"
-    d.vm.network "private_network", ip: "10.100.167.202"
-    d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
-    d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant/ansible/dev3.yml -c local"
-    d.vm.provider "virtualbox" do |v|
-      v.memory = 600
-    end
-  end
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
   end
