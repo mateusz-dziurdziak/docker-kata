@@ -1,4 +1,4 @@
-package pl.dziurdziak.docker_kata.step_6;
+package pl.dziurdziak.docker_kata.step_5;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

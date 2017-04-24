@@ -1,4 +1,4 @@
-package pl.dziurdziak.docker_kata.step_6;
+package pl.dziurdziak.docker_kata.step_4;
 
 import lombok.Data;
 import lombok.SneakyThrows;

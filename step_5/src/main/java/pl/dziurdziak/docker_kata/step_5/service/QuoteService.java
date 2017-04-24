@@ -1,8 +1,8 @@
-package pl.dziurdziak.docker_kata.step_6.service;
+package pl.dziurdziak.docker_kata.step_5.service;
 
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
-import pl.dziurdziak.docker_kata.step_6.model.Quote;
+import pl.dziurdziak.docker_kata.step_5.model.Quote;
 
 import java.io.File;
 import java.io.IOException;

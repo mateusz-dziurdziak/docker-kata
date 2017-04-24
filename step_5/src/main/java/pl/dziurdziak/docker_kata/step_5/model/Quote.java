@@ -1,4 +1,4 @@
-package pl.dziurdziak.docker_kata.step_6.model;
+package pl.dziurdziak.docker_kata.step_5.model;
 
 import lombok.Data;
 
