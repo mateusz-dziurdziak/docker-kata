@@ -10,6 +10,18 @@
    force: yes
   tags: [common]
 
+- name: curl is present
+  apt:
+   name: curl
+   force: yes
+  tags: [common]
+
+- name: postgresql-client is present
+  apt:
+    name: postgresql-client
+    force: yes
+  tags: [common]
+
 - name: Host is present
   lineinfile:
     dest: /etc/hosts

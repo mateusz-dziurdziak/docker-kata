@@ -1,7 +1,6 @@
 hosts: [
   { host_ip: "10.100.167.200", host_name: "dev1"},
   { host_ip: "10.100.167.201", host_name: "dev2"},
-  { host_ip: "10.100.167.202", host_name: "dev3"}
 ]
 
 obsolete_services:
